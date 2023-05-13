@@ -5,6 +5,8 @@ use Apie\TypeConverter\Converters\StringToIntConverter;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use Apie\TypeConverter\Utils\ConverterUtil;
 use Apie\TypeConverter\Utils\ReflectionTypeUtil;
+use PHPUnit\Framework\Reorderable;
+use PHPUnit\Framework\SelfDescribing;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionType;
@@ -67,6 +69,29 @@ class ReflectionTypeUtilTest extends TestCase
         yield [true, $this, 'object'];
         yield [true, $this, __CLASS__];
         yield [true, $this, TestCase::class];
+        yield [true, $this, Reorderable::class . '&' .  SelfDescribing::class];
 
+    }
+
+    /**
+     * @dataProvider rateAccuracyProvider
+     */
+    public function testRateAccuracy(?int $expected, string $wantedType, string $argument)
+    {
+        $this->assertEquals($expected, ReflectionTypeUtil::rateAccuracy(
+            ReflectionTypeFactory::createReflectionType($wantedType),
+            ReflectionTypeFactory::createReflectionType($argument)
+        ));
+    }
+
+    public function rateAccuracyProvider()
+    {
+        yield [1000, 'string', 'string'];
+        yield [900, 'string', '?string'];
+        yield [1000, 'null', 'null'];
+        yield [null, 'null', '?string'];
+        yield [500, 'string|int', 'string'];
+        yield [500, 'string|int|bool', 'string'];
+        yield [500, __CLASS__, Reorderable::class . '&' .  SelfDescribing::class];
     }
 }

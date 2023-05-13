@@ -81,7 +81,7 @@ final class ReflectionTypeUtil {
                         $total = $total === null ? $rating : min($rating, $total);
                     }
                 }
-                return $total === null ? null : min(5, $total);
+                return $total === null ? null : min(500, $total);
             }
             return null;
         }
@@ -106,7 +106,7 @@ final class ReflectionTypeUtil {
                     $total += $rating;
                 }
 
-                return min(5, $total / count($types));
+                return min(500, $total / count($types));
             }
             return null;
         }
@@ -119,7 +119,10 @@ final class ReflectionTypeUtil {
     {
         if ($wantedType instanceof ReflectionNamedType) {
             if ($argument->getName() === $wantedType->getName()) {
-                return $argument->allowsNull() === $wantedType->allowsNull() ? 10 : 9;
+                return $argument->allowsNull() === $wantedType->allowsNull() ? 1000 : 900;
+            }
+            if (is_a($wantedType->getName(), $argument->getName(), true)) {
+                return $argument->allowsNull() === $wantedType->allowsNull() ? 900 : 800;
             }
 
             return null;
@@ -135,7 +138,7 @@ final class ReflectionTypeUtil {
                 $total += $rating;
             }
 
-            return min(5, $total / count($types));
+            return min(500, $total / count($types));
         }
         assert($wantedType instanceof ReflectionUnionType);
         $types = $wantedType->getTypes();
@@ -146,6 +149,6 @@ final class ReflectionTypeUtil {
                 $total = $total === null ? $rating : min($rating, $total);
             }
         }
-        return $total === null ? null : min(5, $total);
+        return $total === null ? null : min(500, $total);
     }
 }
