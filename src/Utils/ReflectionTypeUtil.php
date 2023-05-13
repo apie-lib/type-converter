@@ -28,7 +28,13 @@ final class ReflectionTypeUtil {
         }
         if ($type instanceof ReflectionNamedType) {
             if ($type->isBuiltin()) {
-                return get_debug_type($input) === $type->getName();
+                $name = $type->getName();
+                return match ($name) {
+                    'false' => $input === false,
+                    'true' => $input === true,
+                    'object' => is_object($input),
+                    default => get_debug_type($input) === $name,
+                };
             }
             return is_object($input) ? is_a(get_class($input), $type->getName(), true) : false;
         }
