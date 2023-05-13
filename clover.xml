@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683986556">
-  <project timestamp="1683986556">
+<coverage generated="1683989992">
+  <project timestamp="1683989992">
     <file name="/home/runner/work/type-converter/type-converter/src/ConverterInterface.php">
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -92,22 +92,22 @@
       <line num="47" type="stmt" count="0"/>
       <line num="48" type="stmt" count="0"/>
       <line num="49" type="stmt" count="0"/>
-      <line num="52" type="method" name="createReflectionType" visibility="public" complexity="7" crap="7.12" count="27"/>
-      <line num="54" type="stmt" count="27"/>
+      <line num="52" type="method" name="createReflectionType" visibility="public" complexity="7" crap="7.12" count="35"/>
+      <line num="54" type="stmt" count="35"/>
       <line num="55" type="stmt" count="0"/>
-      <line num="57" type="stmt" count="27"/>
-      <line num="58" type="stmt" count="10"/>
+      <line num="57" type="stmt" count="35"/>
+      <line num="58" type="stmt" count="12"/>
       <line num="59" type="stmt" count="1"/>
-      <line num="60" type="stmt" count="9"/>
+      <line num="60" type="stmt" count="11"/>
       <line num="61" type="stmt" count="1"/>
-      <line num="62" type="stmt" count="8"/>
+      <line num="62" type="stmt" count="10"/>
       <line num="63" type="stmt" count="0"/>
-      <line num="65" type="stmt" count="8"/>
-      <line num="66" type="stmt" count="8"/>
-      <line num="67" type="stmt" count="8"/>
-      <line num="68" type="stmt" count="8"/>
-      <line num="69" type="stmt" count="8"/>
-      <line num="72" type="stmt" count="27"/>
+      <line num="65" type="stmt" count="10"/>
+      <line num="66" type="stmt" count="10"/>
+      <line num="67" type="stmt" count="10"/>
+      <line num="68" type="stmt" count="10"/>
+      <line num="69" type="stmt" count="10"/>
+      <line num="72" type="stmt" count="35"/>
       <metrics loc="75" ncloc="66" classes="1" methods="4" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="17" elements="30" coveredelements="19"/>
     </file>
     <file name="/home/runner/work/type-converter/type-converter/src/TypeConverter.php">
@@ -170,19 +170,19 @@
     </file>
     <file name="/home/runner/work/type-converter/type-converter/src/Utils/ReflectionTypeUtil.php">
       <class name="Apie\TypeConverter\Utils\ReflectionTypeUtil" namespace="global">
-        <metrics complexity="41" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="77" coveredstatements="20" elements="84" coveredelements="21"/>
+        <metrics complexity="43" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="52" elements="86" coveredelements="53"/>
       </class>
       <line num="12" type="method" name="__construct" visibility="private" complexity="1" crap="2" count="0"/>
       <line num="14" type="stmt" count="0"/>
-      <line num="16" type="method" name="toClass" visibility="public" complexity="3" crap="3" count="4"/>
-      <line num="18" type="stmt" count="4"/>
-      <line num="19" type="stmt" count="2"/>
+      <line num="16" type="method" name="toClass" visibility="public" complexity="3" crap="3" count="5"/>
+      <line num="18" type="stmt" count="5"/>
+      <line num="19" type="stmt" count="3"/>
       <line num="21" type="stmt" count="2"/>
-      <line num="24" type="method" name="isApplicable" visibility="public" complexity="11" crap="11.84" count="19"/>
-      <line num="26" type="stmt" count="19"/>
+      <line num="24" type="method" name="isApplicable" visibility="public" complexity="11" crap="11" count="20"/>
+      <line num="26" type="stmt" count="20"/>
       <line num="27" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="18"/>
-      <line num="30" type="stmt" count="18"/>
+      <line num="29" type="stmt" count="19"/>
+      <line num="30" type="stmt" count="19"/>
       <line num="31" type="stmt" count="16"/>
       <line num="32" type="stmt" count="16"/>
       <line num="33" type="stmt" count="16"/>
@@ -190,21 +190,21 @@
       <line num="35" type="stmt" count="16"/>
       <line num="36" type="stmt" count="16"/>
       <line num="37" type="stmt" count="16"/>
-      <line num="39" type="stmt" count="2"/>
-      <line num="41" type="stmt" count="2"/>
+      <line num="39" type="stmt" count="3"/>
+      <line num="41" type="stmt" count="3"/>
       <line num="42" type="stmt" count="2"/>
       <line num="43" type="stmt" count="2"/>
       <line num="44" type="stmt" count="1"/>
       <line num="47" type="stmt" count="1"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="51" type="stmt" count="0"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="1"/>
       <line num="52" type="stmt" count="0"/>
-      <line num="55" type="stmt" count="0"/>
-      <line num="58" type="method" name="rateAccuracy" visibility="public" complexity="3" crap="12" count="0"/>
-      <line num="60" type="stmt" count="0"/>
-      <line num="61" type="stmt" count="0"/>
-      <line num="63" type="stmt" count="0"/>
-      <line num="64" type="stmt" count="0"/>
+      <line num="55" type="stmt" count="1"/>
+      <line num="58" type="method" name="rateAccuracy" visibility="public" complexity="3" crap="3.07" count="7"/>
+      <line num="60" type="stmt" count="7"/>
+      <line num="61" type="stmt" count="7"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="1"/>
       <line num="67" type="stmt" count="0"/>
       <line num="70" type="method" name="rateOnUnionType" visibility="private" complexity="7" crap="56" count="0"/>
       <line num="72" type="stmt" count="0"/>
@@ -220,44 +220,46 @@
       <line num="84" type="stmt" count="0"/>
       <line num="86" type="stmt" count="0"/>
       <line num="90" type="stmt" count="0"/>
-      <line num="93" type="method" name="rateOnIntersectionType" visibility="private" complexity="5" crap="30" count="0"/>
-      <line num="95" type="stmt" count="0"/>
-      <line num="96" type="stmt" count="0"/>
-      <line num="97" type="stmt" count="0"/>
-      <line num="98" type="stmt" count="0"/>
-      <line num="99" type="stmt" count="0"/>
-      <line num="100" type="stmt" count="0"/>
-      <line num="101" type="stmt" count="0"/>
-      <line num="102" type="stmt" count="0"/>
-      <line num="103" type="stmt" count="0"/>
+      <line num="93" type="method" name="rateOnIntersectionType" visibility="private" complexity="5" crap="5.25" count="1"/>
+      <line num="95" type="stmt" count="1"/>
+      <line num="96" type="stmt" count="1"/>
+      <line num="97" type="stmt" count="1"/>
+      <line num="98" type="stmt" count="1"/>
+      <line num="99" type="stmt" count="1"/>
+      <line num="100" type="stmt" count="1"/>
+      <line num="101" type="stmt" count="1"/>
+      <line num="102" type="stmt" count="1"/>
+      <line num="103" type="stmt" count="1"/>
       <line num="104" type="stmt" count="0"/>
-      <line num="106" type="stmt" count="0"/>
-      <line num="109" type="stmt" count="0"/>
+      <line num="106" type="stmt" count="1"/>
+      <line num="109" type="stmt" count="1"/>
       <line num="111" type="stmt" count="0"/>
       <line num="115" type="stmt" count="0"/>
-      <line num="118" type="method" name="rateOnNamedType" visibility="private" complexity="11" crap="132" count="0"/>
-      <line num="120" type="stmt" count="0"/>
-      <line num="121" type="stmt" count="0"/>
-      <line num="122" type="stmt" count="0"/>
-      <line num="125" type="stmt" count="0"/>
-      <line num="127" type="stmt" count="0"/>
-      <line num="128" type="stmt" count="0"/>
-      <line num="129" type="stmt" count="0"/>
-      <line num="130" type="stmt" count="0"/>
+      <line num="118" type="method" name="rateOnNamedType" visibility="private" complexity="13" crap="21.13" count="7"/>
+      <line num="120" type="stmt" count="7"/>
+      <line num="121" type="stmt" count="7"/>
+      <line num="122" type="stmt" count="5"/>
+      <line num="124" type="stmt" count="4"/>
+      <line num="125" type="stmt" count="1"/>
+      <line num="128" type="stmt" count="3"/>
+      <line num="130" type="stmt" count="2"/>
       <line num="131" type="stmt" count="0"/>
       <line num="132" type="stmt" count="0"/>
       <line num="133" type="stmt" count="0"/>
+      <line num="134" type="stmt" count="0"/>
       <line num="135" type="stmt" count="0"/>
+      <line num="136" type="stmt" count="0"/>
       <line num="138" type="stmt" count="0"/>
       <line num="141" type="stmt" count="0"/>
-      <line num="142" type="stmt" count="0"/>
-      <line num="143" type="stmt" count="0"/>
-      <line num="144" type="stmt" count="0"/>
-      <line num="145" type="stmt" count="0"/>
-      <line num="146" type="stmt" count="0"/>
-      <line num="149" type="stmt" count="0"/>
-      <metrics loc="151" ncloc="147" classes="1" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="77" coveredstatements="20" elements="84" coveredelements="21"/>
+      <line num="144" type="stmt" count="2"/>
+      <line num="145" type="stmt" count="2"/>
+      <line num="146" type="stmt" count="2"/>
+      <line num="147" type="stmt" count="2"/>
+      <line num="148" type="stmt" count="2"/>
+      <line num="149" type="stmt" count="2"/>
+      <line num="152" type="stmt" count="2"/>
+      <metrics loc="154" ncloc="150" classes="1" methods="7" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="52" elements="86" coveredelements="53"/>
     </file>
-    <metrics files="11" loc="461" ncloc="424" classes="10" methods="24" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="170" coveredstatements="86" elements="194" coveredelements="94"/>
+    <metrics files="11" loc="464" ncloc="427" classes="10" methods="24" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="172" coveredstatements="118" elements="196" coveredelements="126"/>
   </project>
 </coverage>
