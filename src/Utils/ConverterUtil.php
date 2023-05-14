@@ -5,7 +5,11 @@ use Apie\TypeConverter\ConverterInterface;
 use ReflectionClass;
 use ReflectionType;
 
-final class ConverterUtil {
+final class ConverterUtil
+{
+    /**
+     * @codecoverageIgnore
+     */
     private function __construct()
     {
     }

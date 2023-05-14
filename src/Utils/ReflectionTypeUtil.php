@@ -8,7 +8,11 @@ use ReflectionNamedType;
 use ReflectionType;
 use ReflectionUnionType;
 
-final class ReflectionTypeUtil {
+final class ReflectionTypeUtil
+{
+    /**
+     * @codecoverageIgnore
+     */
     private function __construct()
     {
     }
@@ -120,6 +124,12 @@ final class ReflectionTypeUtil {
         if ($wantedType instanceof ReflectionNamedType) {
             if ($argument->getName() === $wantedType->getName()) {
                 return $argument->allowsNull() === $wantedType->allowsNull() ? 1000 : 900;
+            }
+            if ($wantedType->getName() === 'null') {
+                return $argument->allowsNull() ? 400 : null;
+            }
+            if ($argument->getName() === 'mixed') {
+                return 400;
             }
             if (is_a($wantedType->getName(), $argument->getName(), true)) {
                 return $argument->allowsNull() === $wantedType->allowsNull() ? 900 : 800;

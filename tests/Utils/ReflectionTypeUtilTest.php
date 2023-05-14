@@ -88,10 +88,18 @@ class ReflectionTypeUtilTest extends TestCase
     {
         yield [1000, 'string', 'string'];
         yield [900, 'string', '?string'];
+        yield [400, 'string', 'mixed'];
         yield [1000, 'null', 'null'];
-        yield [null, 'null', '?string'];
+        yield [400, 'null', '?string'];
         yield [500, 'string|int', 'string'];
         yield [500, 'string|int|bool', 'string'];
-        yield [500, __CLASS__, Reorderable::class . '&' .  SelfDescribing::class];
+        $intersection = Reorderable::class . '&' .  SelfDescribing::class;
+        yield [500, __CLASS__, $intersection];
+        yield [null, 'string', $intersection];
+        yield [null, 'string|int', $intersection];
+        yield [null, $intersection, $intersection]; //TODO
+        yield [null, 'string', 'string|int'];
+        yield [500, 'string|int|null', 'null'];
+        yield [null, 'null', 'string|int|null'];
     }
 }

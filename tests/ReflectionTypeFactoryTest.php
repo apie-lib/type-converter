@@ -3,10 +3,12 @@ namespace Apie\Tests\TypeConverter;
 
 use Apie\TypeConverter\ReflectionTypeFactory;
 use Generator;
+use LogicException;
 use PHPUnit\Framework\TestCase;
 use ReflectionIntersectionType;
 use ReflectionNamedType;
 use ReflectionUnionType;
+use RuntimeException;
 
 class ReflectionTypeFactoryTest extends TestCase
 {
@@ -28,6 +30,27 @@ class ReflectionTypeFactoryTest extends TestCase
         yield [ReflectionNamedType::class, 'null'];
         yield [ReflectionIntersectionType::class, 'FirstInterface&SecondInterface'];
         yield [ReflectionUnionType::class, 'string|int'];
+        if (PHP_VERSION_ID > 80200) {
+            yield [ReflectionNamedType::class, 'true'];
+        }
+    }
 
+    /**
+     * @test
+     */
+    public function it_prevents_simple_eval_exploits()
+    {
+        $this->expectException(RuntimeException::class);
+        ReflectionTypeFactory::createReflectionType('true; private $exploit = true;');
+    }
+
+    /**
+     * @test
+     * @requires PHP < 8.2
+     */
+    public function true_typehint_throws_error_when_php_lower_than_php82()
+    {
+        $this->expectException(LogicException::class);
+        ReflectionTypeFactory::createReflectionType('true');
     }
 }
