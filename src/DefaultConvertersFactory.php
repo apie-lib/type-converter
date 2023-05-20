@@ -1,6 +1,8 @@
 <?php
 namespace Apie\TypeConverter;
 
+use Apie\TypeConverter\Converters\FloatToStringConverter;
+use Apie\TypeConverter\Converters\IntToStringConverter;
 use Apie\TypeConverter\Converters\NumberToStringConverter;
 use Apie\TypeConverter\Converters\ReflectionPropertyToStringConverter;
 use Apie\TypeConverter\Converters\StringToIntConverter;
@@ -14,10 +16,11 @@ final class DefaultConvertersFactory {
     /**
      * @return ConverterInterface<mixed, mixed>[]
      */
-    public function create(): array
+    public static function create(): array
     {
         return [
-            new NumberToStringConverter(),
+            new FloatToStringConverter(),
+            new IntToStringConverter(),
             new StringToIntConverter(),
             new ReflectionPropertyToStringConverter(),
             new StringToReflectionTypeConverter(),
