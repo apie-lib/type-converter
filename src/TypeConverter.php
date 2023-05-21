@@ -45,8 +45,11 @@ final class TypeConverter {
         return $this->inputMapping[$key];
     }
 
-    public function convertTo(mixed $data, ReflectionType $wantedType): mixed
+    public function convertTo(mixed $data, ReflectionType|string $wantedType): mixed
     {
+        if (is_string($wantedType)) {
+            $wantedType = ReflectionTypeFactory::createReflectionType($wantedType);
+        }
         $cacheKey = get_debug_type($data)
             . ','
             . $this->cacheConverter->convert($wantedType);

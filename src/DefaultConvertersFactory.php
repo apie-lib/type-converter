@@ -16,7 +16,7 @@ final class DefaultConvertersFactory {
     /**
      * @return ConverterInterface<mixed, mixed>[]
      */
-    public static function create(): array
+    public static function create(ConverterInterface... $converters): array
     {
         return [
             new FloatToStringConverter(),
@@ -24,7 +24,7 @@ final class DefaultConvertersFactory {
             new StringToIntConverter(),
             new ReflectionPropertyToStringConverter(),
             new StringToReflectionTypeConverter(),
-
+            ...$converters
         ];
     }
 }
