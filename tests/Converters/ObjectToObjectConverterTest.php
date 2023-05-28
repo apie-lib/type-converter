@@ -5,6 +5,7 @@ use Apie\Tests\TypeConverter\Fixtures\DomainObject;
 use Apie\Tests\TypeConverter\Fixtures\DtoExample;
 use Apie\TypeConverter\Converters\ObjectToObjectConverter;
 use Apie\TypeConverter\DefaultConvertersFactory;
+use Apie\TypeConverter\Exceptions\CanNotConvertObjectException;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use Apie\TypeConverter\TypeConverter;
 use Generator;
@@ -39,5 +40,20 @@ class ObjectToObjectConverterTest extends TestCase
         $this->assertNull($actual->optional);
         $revert = $testItem->convertTo($actual, ReflectionTypeFactory::createReflectionType(DomainObject::class));
         $this->assertEquals($object, $revert);
+    }
+
+    /**
+     * @test
+     */
+    public function it_throws_error_if_values_are_not_set()
+    {
+        $fallback = new ObjectToObjectConverter();
+        $testItem = new TypeConverter(
+            $fallback,
+            ...DefaultConvertersFactory::create()
+        );
+        $object = new DtoExample();
+        $this->expectException(CanNotConvertObjectException::class);
+        $actual = $testItem->convertTo($object, DomainObject::class);
     }
 }

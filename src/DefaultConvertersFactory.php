@@ -3,12 +3,14 @@ namespace Apie\TypeConverter;
 
 use Apie\TypeConverter\Converters\FloatToStringConverter;
 use Apie\TypeConverter\Converters\IntToStringConverter;
-use Apie\TypeConverter\Converters\NumberToStringConverter;
 use Apie\TypeConverter\Converters\ReflectionPropertyToStringConverter;
 use Apie\TypeConverter\Converters\StringToIntConverter;
 use Apie\TypeConverter\Converters\StringToReflectionTypeConverter;
 
 final class DefaultConvertersFactory {
+    /**
+     * @codecoverageIgnore
+     */
     private function __construct()
     {
     }

@@ -22,7 +22,7 @@ class TypeConverterTest extends TestCase
         $testItem = new TypeConverter(new ObjectToObjectConverter(), new StringToIntConverter());
         $this->assertSame(
             12,
-            $testItem->convertTo('12', ReflectionTypeFactory::createReflectionType('int'))
+            $testItem->convertTo('12', 'int')
         );
     }
 
@@ -46,7 +46,7 @@ class TypeConverterTest extends TestCase
         );
         $this->assertSame(
             'Hello',
-            $testItem->convertTo(12, ReflectionTypeFactory::createReflectionType('string'))
+            $testItem->convertTo(12, 'string')
         );
     }
 
@@ -55,8 +55,8 @@ class TypeConverterTest extends TestCase
      */
     public function it_throws_error_if_the_right_converter_can_not_be_found()
     {
-        $this->expectException(CanNotConvertObjectException::class);
         $testItem = new TypeConverter(new ObjectToObjectConverter(), new IntToStringConverter());
-        $testItem->convertTo($this, ReflectionTypeFactory::createReflectionType('int'));
+        $this->expectException(CanNotConvertObjectException::class);
+        $testItem->convertTo(12, 'int');
     }
 }

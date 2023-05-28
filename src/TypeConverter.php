@@ -61,7 +61,7 @@ final class TypeConverter {
         $type = ReflectionTypeFactory::createReflectionType(get_debug_type($data));
         foreach ($this->getConvertersForData($data) as $converter) {
            
-            $rating = ReflectionTypeUtil::rateAccuracy($wantedType, $type);
+            $rating = ReflectionTypeUtil::rateAccuracy($type, ConverterUtil::getOutput($converter));
             if ($rating !== null)  {
                 if ($score === null || $score > $rating) {
                     $score = $rating;
