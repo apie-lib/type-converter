@@ -1,7 +1,7 @@
 <?php
 namespace Apie\TypeConverter;
 
-use Apie\TypeConverter\Converters\ReflectionPropertyToStringConverter;
+use Apie\TypeConverter\Converters\ReflectionTypeToStringConverter;
 use Apie\TypeConverter\Exceptions\CanNotConvertObjectException;
 use Apie\TypeConverter\Utils\ConverterUtil;
 use Apie\TypeConverter\Utils\ReflectionTypeUtil;
@@ -9,12 +9,12 @@ use ReflectionType;
 use Throwable;
 
 final class TypeConverter {
-    private ReflectionPropertyToStringConverter $cacheConverter;
+    private ReflectionTypeToStringConverter $cacheConverter;
     private array $converters = [];
     private array $inputMapping = [];
     public function __construct(private readonly ObjectFallbackConverter $fallbackConverter, ConverterInterface... $converters)
     {
-        $this->cacheConverter = new ReflectionPropertyToStringConverter();
+        $this->cacheConverter = new ReflectionTypeToStringConverter();
         foreach ($converters as $converter) {
             $input = ConverterUtil::getInput($converter);
             $output = ConverterUtil::getOutput($converter);

@@ -3,14 +3,14 @@ namespace Apie\TypeConverter\Utils;
 
 use Apie\TypeConverter\ReflectionTypeFactory;
 use ReflectionClass;
-use ReflectionIntersectionType;
 use ReflectionMethod;
-use ReflectionNamedType;
 use ReflectionProperty;
 use ReflectionType;
-use ReflectionUnionType;
 
 final class PropertyIterateUtil {
+    /**
+     * @codeCoverageIgnore
+     */
     private function __construct() {
     }
 

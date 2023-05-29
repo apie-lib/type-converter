@@ -3,7 +3,7 @@ namespace Apie\TypeConverter;
 
 use Apie\TypeConverter\Converters\FloatToStringConverter;
 use Apie\TypeConverter\Converters\IntToStringConverter;
-use Apie\TypeConverter\Converters\ReflectionPropertyToStringConverter;
+use Apie\TypeConverter\Converters\ReflectionTypeToStringConverter;
 use Apie\TypeConverter\Converters\StringToIntConverter;
 use Apie\TypeConverter\Converters\StringToReflectionTypeConverter;
 
@@ -24,7 +24,7 @@ final class DefaultConvertersFactory {
             new FloatToStringConverter(),
             new IntToStringConverter(),
             new StringToIntConverter(),
-            new ReflectionPropertyToStringConverter(),
+            new ReflectionTypeToStringConverter(),
             new StringToReflectionTypeConverter(),
             ...$converters
         ];

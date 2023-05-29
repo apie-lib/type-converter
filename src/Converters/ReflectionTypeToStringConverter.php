@@ -9,7 +9,7 @@ use ReflectionType;
 /**
  * @implements ConverterInterface<ReflectionType, string>
  */
-class ReflectionPropertyToStringConverter implements ConverterInterface
+class ReflectionTypeToStringConverter implements ConverterInterface
 {
     public function convert(ReflectionType $input): string
     {

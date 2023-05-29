@@ -8,13 +8,7 @@ use Apie\TypeConverter\DefaultConvertersFactory;
 use Apie\TypeConverter\Exceptions\CanNotConvertObjectException;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use Apie\TypeConverter\TypeConverter;
-use Generator;
-use LogicException;
 use PHPUnit\Framework\TestCase;
-use ReflectionIntersectionType;
-use ReflectionNamedType;
-use ReflectionUnionType;
-use RuntimeException;
 
 class ObjectToObjectConverterTest extends TestCase
 {
@@ -54,6 +48,6 @@ class ObjectToObjectConverterTest extends TestCase
         );
         $object = new DtoExample();
         $this->expectException(CanNotConvertObjectException::class);
-        $actual = $testItem->convertTo($object, DomainObject::class);
+        $testItem->convertTo($object, DomainObject::class);
     }
 }

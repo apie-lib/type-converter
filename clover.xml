@@ -62,8 +62,8 @@
       <line num="83" type="stmt" count="1"/>
       <metrics loc="85" ncloc="82" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="34" coveredstatements="21" elements="36" coveredelements="22"/>
     </file>
-    <file name="/home/runner/work/type-converter/type-converter/src/Converters/ReflectionPropertyToStringConverter.php">
-      <class name="Apie\TypeConverter\Converters\ReflectionPropertyToStringConverter" namespace="global">
+    <file name="/home/runner/work/type-converter/type-converter/src/Converters/ReflectionTypeToStringConverter.php">
+      <class name="Apie\TypeConverter\Converters\ReflectionTypeToStringConverter" namespace="global">
         <metrics complexity="3" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="15" elements="17" coveredelements="15"/>
       </class>
       <line num="14" type="method" name="convert" visibility="public" complexity="3" crap="3.00" count="6"/>
