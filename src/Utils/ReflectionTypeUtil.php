@@ -11,7 +11,7 @@ use ReflectionUnionType;
 final class ReflectionTypeUtil
 {
     /**
-     * @codecoverageIgnore
+     * @codeCoverageIgnore
      */
     private function __construct()
     {
@@ -128,11 +128,47 @@ final class ReflectionTypeUtil
             if ($wantedType->getName() === 'null') {
                 return $argument->allowsNull() ? 400 : null;
             }
+            if ($wantedType->getName() === 'object') {
+                $sameNullable = $argument->allowsNull() === $wantedType->allowsNull() ? 0 : -110;
+                if ($argument->getName() === 'object') {
+                    return 1000 + $sameNullable;
+                }
+                if (!$wantedType->isBuiltin()) {
+                    return null;
+                }
+                return 500 + $sameNullable;
+            }
             if ($argument->getName() === 'mixed') {
                 return 400;
             }
+            if ($argument->getName() === 'true' || $argument->getName() === 'false') {
+                $sameNullable = $argument->allowsNull() === $wantedType->allowsNull() ? 0 : -110;
+                return match($wantedType->getName()) {
+                    'bool' => 800 + $sameNullable,
+                    $argument->getName() => 1200 + $sameNullable,
+                    default => null,
+                };
+            }
             if (is_a($wantedType->getName(), $argument->getName(), true)) {
+                if ($wantedType->isBuiltin()) {
+                    $sameNullable = $argument->allowsNull() === $wantedType->allowsNull() ? 0 : -110;
+                    // int gets lower accuracy because of float type when we have int|float
+                    // string gets lower accuracy because almost all types can convert to string
+                    return match($wantedType->getName()) {
+                        'int' => 900 + $sameNullable,
+                        'string' => 800 + $sameNullable,
+                        'object' => 500 + $sameNullable,
+                        'iterable' => 400 + $sameNullable,
+                        'array' => 400 + $sameNullable,
+                        default => 1000 + $sameNullable,
+                    };
+                }
                 return $argument->allowsNull() === $wantedType->allowsNull() ? 900 : 800;
+            } else {
+                if (class_exists($wantedType->getName()) && $argument->getName() === 'object') {
+                    $sameNullable = $argument->allowsNull() === $wantedType->allowsNull() ? 0 : -110;
+                    return 400 + $sameNullable;
+                }
             }
 
             return null;

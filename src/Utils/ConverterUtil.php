@@ -8,7 +8,7 @@ use ReflectionType;
 final class ConverterUtil
 {
     /**
-     * @codecoverageIgnore
+     * @codeCoverageIgnore
      */
     private function __construct()
     {

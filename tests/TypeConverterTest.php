@@ -72,6 +72,26 @@ class TypeConverterTest extends TestCase
     /**
      * @test
      */
+    public function it_can_have_a_union_type_as_wanted_type()
+    {
+        $testItem = new TypeConverter(
+            new ObjectToObjectConverter(),
+            new class implements ConverterInterface {
+                public function convert(int $input): int {
+                    return 42;
+                }
+            },
+            new IntToStringConverter(),
+        );
+        $this->assertSame(
+            42,
+            $testItem->convertTo(12, 'string|int')
+        );
+    }
+
+    /**
+     * @test
+     */
     public function it_throws_error_if_the_right_converter_can_not_be_found()
     {
         $testItem = new TypeConverter(new ObjectToObjectConverter(), new IntToStringConverter());

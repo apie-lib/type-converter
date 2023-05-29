@@ -1,6 +1,7 @@
 <?php
 namespace Apie\TypeConverter;
 
+use Apie\TypeConverter\Converters\ArrayToObjectConverter;
 use Apie\TypeConverter\Converters\FloatToStringConverter;
 use Apie\TypeConverter\Converters\IntToStringConverter;
 use Apie\TypeConverter\Converters\ReflectionTypeToStringConverter;
@@ -26,6 +27,7 @@ final class DefaultConvertersFactory {
             new StringToIntConverter(),
             new ReflectionTypeToStringConverter(),
             new StringToReflectionTypeConverter(),
+            new ArrayToObjectConverter(),
             ...$converters
         ];
     }

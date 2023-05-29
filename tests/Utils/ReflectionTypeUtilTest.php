@@ -61,6 +61,8 @@ class ReflectionTypeUtilTest extends TestCase
             yield [true, $true, 'true'];
             yield [false, $false, 'true'];
         }
+        yield [true, $this, 'object'];
+        yield [true, $this, '?object'];
 
         yield [false, $string, 'object'];
         yield [false, $true, 'object'];
@@ -93,6 +95,8 @@ class ReflectionTypeUtilTest extends TestCase
         yield [400, 'null', '?string'];
         yield [500, 'string|int', 'string'];
         yield [500, 'string|int|bool', 'string'];
+        yield [500, 'object', __CLASS__];
+        yield [390, '?object', __CLASS__];
         $intersection = Reorderable::class . '&' .  SelfDescribing::class;
         yield [500, __CLASS__, $intersection];
         yield [null, 'string', $intersection];
