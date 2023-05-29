@@ -5,7 +5,6 @@ use Apie\TypeConverter\Converters\ReflectionPropertyToStringConverter;
 use Apie\TypeConverter\Exceptions\CanNotConvertObjectException;
 use Apie\TypeConverter\Utils\ConverterUtil;
 use Apie\TypeConverter\Utils\ReflectionTypeUtil;
-use Exception;
 use ReflectionType;
 use Throwable;
 
@@ -22,7 +21,6 @@ final class TypeConverter {
             $inputCacheKey = $this->cacheConverter->convert($input);
             $outputCacheKey = $this->cacheConverter->convert($output);
             $cacheKey = $inputCacheKey . ',' . $outputCacheKey;
-            $this->inputMapping[$inputCacheKey][] = $converter;
             $this->converters[$cacheKey] = $converter;
         }
     }
@@ -61,7 +59,7 @@ final class TypeConverter {
         $type = ReflectionTypeFactory::createReflectionType(get_debug_type($data));
         foreach ($this->getConvertersForData($data) as $converter) {
            
-            $rating = ReflectionTypeUtil::rateAccuracy($type, ConverterUtil::getOutput($converter));
+            $rating = ReflectionTypeUtil::rateAccuracy(ConverterUtil::getOutput($converter), $wantedType);
             if ($rating !== null)  {
                 if ($score === null || $score > $rating) {
                     $score = $rating;

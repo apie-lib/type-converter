@@ -17,12 +17,31 @@ class TypeConverterTest extends TestCase
     /**
      * @test
      */
-    public function it_can_pick_the_right_converter()
+    public function it_can_pick_the_right_converter_with_caching()
     {
         $testItem = new TypeConverter(new ObjectToObjectConverter(), new StringToIntConverter());
         $this->assertSame(
             12,
             $testItem->convertTo('12', 'int')
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_pick_the_right_converter_without_caching()
+    {
+        $testItem = new TypeConverter(
+            new ObjectToObjectConverter(),
+            new class implements ConverterInterface {
+                public function convert(int|float $input): string {
+                    return 'HI';
+                }
+            }
+        );
+        $this->assertSame(
+            'HI',
+            $testItem->convertTo(12, 'string')
         );
     }
 

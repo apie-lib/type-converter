@@ -9,7 +9,7 @@ use Apie\TypeConverter\Converters\StringToReflectionTypeConverter;
 
 final class DefaultConvertersFactory {
     /**
-     * @codecoverageIgnore
+     * @codeCoverageIgnore
      */
     private function __construct()
     {
