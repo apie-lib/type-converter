@@ -20,6 +20,6 @@ class StringToIntConverter implements ConverterInterface
                 )
             );
         }
-        return $int; // TODO
+        return $int;
     }
 }

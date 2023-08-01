@@ -47,7 +47,7 @@ final class ArrayToObjectConverter implements ConverterInterface
                     }
                     unset($array[$propertyName]);
                 } else {
-                    if ($parameter->hasDefaultValue()) {
+                    if ($parameter->isDefaultValueAvailable()) {
                         $constructorArguments[] = $parameter->getDefaultValue();
                     } else {
                         throw new UnexpectedValueException('Property "' . $propertyName . '" is not found!');
