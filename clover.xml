@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1685370029">
-  <project timestamp="1685370029">
+<coverage generated="1690891885">
+  <project timestamp="1690891885">
     <file name="/home/runner/work/type-converter/type-converter/src/ConverterInterface.php">
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -112,7 +112,7 @@
       <line num="20" type="stmt" count="1"/>
       <line num="21" type="stmt" count="1"/>
       <line num="23" type="stmt" count="2"/>
-      <metrics loc="25" ncloc="21" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="10" coveredelements="10"/>
+      <metrics loc="25" ncloc="22" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="10" coveredelements="10"/>
     </file>
     <file name="/home/runner/work/type-converter/type-converter/src/Converters/StringToReflectionTypeConverter.php">
       <class name="Apie\TypeConverter\Converters\StringToReflectionTypeConverter" namespace="global">
@@ -405,6 +405,6 @@
       <line num="198" type="stmt" count="4"/>
       <metrics loc="200" ncloc="191" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="109" coveredstatements="72" elements="115" coveredelements="74"/>
     </file>
-    <metrics files="17" loc="768" ncloc="699" classes="15" methods="29" coveredmethods="20" conditionals="0" coveredconditionals="0" statements="279" coveredstatements="219" elements="308" coveredelements="239"/>
+    <metrics files="17" loc="768" ncloc="700" classes="15" methods="29" coveredmethods="20" conditionals="0" coveredconditionals="0" statements="279" coveredstatements="219" elements="308" coveredelements="239"/>
   </project>
 </coverage>
