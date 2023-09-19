@@ -19,7 +19,7 @@ final class ConverterUtil
         $method = (new ReflectionClass($converter))->getMethod('convert');
         $parameters = $method->getParameters();
         assert(!empty($parameters[0]));
-        assert(1 === $method->getNumberOfRequiredParameters());
+        assert(1 <= $method->getNumberOfRequiredParameters());
         return $parameters[0]->getType();
     }
 
