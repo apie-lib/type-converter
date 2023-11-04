@@ -59,7 +59,7 @@ final class TypeConverter {
         foreach ($this->getConvertersForData($data) as $converter) {
             $rating = ReflectionTypeUtil::rateAccuracy($wantedType, ConverterUtil::getOutput($converter));
             if ($rating !== null)  {
-                if ($score === null || $score > $rating) {
+                if ($score === null || $score < $rating) {
                     $score = $rating;
                     $bestConverter = $converter;
                 }
