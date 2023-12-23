@@ -1,6 +1,9 @@
 <?php
 namespace Apie\Tests\TypeConverter;
 
+use Apie\Tests\TypeConverter\Fixtures\BaseClass;
+use Apie\Tests\TypeConverter\Fixtures\ExtendedClass;
+use Apie\Tests\TypeConverter\Fixtures\GetNumberInterface;
 use Apie\TypeConverter\ConverterInterface;
 use Apie\TypeConverter\Converters\IntToStringConverter;
 use Apie\TypeConverter\Converters\NumberToStringConverter;
@@ -11,6 +14,7 @@ use Apie\TypeConverter\ObjectFallbackConverter;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use Apie\TypeConverter\TypeConverter;
 use PHPUnit\Framework\TestCase;
+use ReflectionType;
 
 class TypeConverterTest extends TestCase
 {
@@ -68,6 +72,49 @@ class TypeConverterTest extends TestCase
             $testItem->convertTo(12, 'string')
         );
     }
+
+    /**
+     * @test
+     */
+    public function it_can_handle_inheritance()
+    {
+        $testItem = new TypeConverter(
+            new ObjectToObjectConverter(),
+            new class implements ConverterInterface {
+                public function convert(int $input, ?ReflectionType $wantedType): BaseClass
+                {
+                    $className = (string) $wantedType;
+                    return new $className($input);
+                }
+            },
+        );
+        $this->assertEquals(
+            new ExtendedClass(42),
+            $testItem->convertTo(42, ReflectionTypeFactory::createReflectionType(ExtendedClass::class))
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_handle_inheritance_with_interface()
+    {
+        $testItem = new TypeConverter(
+            new ObjectToObjectConverter(),
+            new class implements ConverterInterface {
+                public function convert(int $input, ?ReflectionType $wantedType): GetNumberInterface
+                {
+                    $className = (string) $wantedType;
+                    return new $className($input);
+                }
+            },
+        );
+        $this->assertEquals(
+            new ExtendedClass(42),
+            $testItem->convertTo(42, ReflectionTypeFactory::createReflectionType(ExtendedClass::class))
+        );
+    }
+
 
     /**
      * @test

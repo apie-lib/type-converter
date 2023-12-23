@@ -9,6 +9,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
 use ReflectionClass;
 use ReflectionNamedType;
+use Symfony\Component\PropertyAccess\Exception\UninitializedPropertyException;
 
 /**
  * @implements ConverterInterface<object, object>
@@ -27,7 +28,10 @@ final class ObjectToObjectConverter implements ObjectFallbackConverter
     {
         $array = [];
         foreach (array_keys(PropertyIterateUtil::getReadProperties(new ReflectionClass($input))) as $propertyName) {
-            $array[$propertyName] = $this->propertyAccessor->getValue($input, $propertyName);
+            try {
+                $array[$propertyName] = $this->propertyAccessor->getValue($input, $propertyName);
+            } catch (UninitializedPropertyException) {
+            }
         }
         return $this->internal->convert($array, $wantedType, $typeConverter);
     }
