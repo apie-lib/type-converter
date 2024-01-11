@@ -2,10 +2,12 @@
 namespace Apie\TypeConverter;
 
 use Apie\TypeConverter\Converters\ReflectionTypeToStringConverter;
+use Apie\TypeConverter\Exceptions\CanNotConverObjectToUnionException;
 use Apie\TypeConverter\Exceptions\CanNotConvertObjectException;
 use Apie\TypeConverter\Utils\ConverterUtil;
 use Apie\TypeConverter\Utils\ReflectionTypeUtil;
 use ReflectionType;
+use ReflectionUnionType;
 use Throwable;
 
 final class TypeConverter {
@@ -43,6 +45,22 @@ final class TypeConverter {
         return $this->inputMapping[$key];
     }
 
+    private function convertToUnion(mixed $data, ReflectionUnionType $wantedType): mixed
+    {
+        $todo = $wantedType->getTypes();
+        $errors = [];
+        // TODO: sort on priority (do float and int check before string)
+        while (!empty($todo)) {
+            $current = array_pop($todo);
+            try {
+                return $this->convertTo($data, $current);
+            } catch (Throwable $throwable) {
+                $errors[(string) $current] = $throwable;
+            }
+        }
+        throw new CanNotConverObjectToUnionException($data, $errors, $wantedType);
+    }
+
     public function convertTo(mixed $data, ReflectionType|string $wantedType): mixed
     {
         if (is_string($wantedType)) {
@@ -53,6 +71,9 @@ final class TypeConverter {
             . $this->cacheConverter->convert($wantedType);
         if (isset($this->converters[$cacheKey])) {
             return $this->converters[$cacheKey]->convert($data, $wantedType, $this);
+        }
+        if ($wantedType instanceof ReflectionUnionType) {
+            return $this->convertToUnion($data, $wantedType);
         }
         $bestConverter = null;
         $score = null;
