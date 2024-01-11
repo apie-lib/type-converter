@@ -4,7 +4,7 @@ namespace Apie\TypeConverter\Exceptions;
 use LogicException;
 use ReflectionUnionType;
 
-final class CanNotConverObjectToUnionException extends LogicException
+final class CanNotConvertObjectToUnionException extends LogicException
 {
     /**
      * @param array<string, Throwable> $errors

@@ -2,7 +2,7 @@
 namespace Apie\TypeConverter;
 
 use Apie\TypeConverter\Converters\ReflectionTypeToStringConverter;
-use Apie\TypeConverter\Exceptions\CanNotConverObjectToUnionException;
+use Apie\TypeConverter\Exceptions\CanNotConvertObjectToUnionException;
 use Apie\TypeConverter\Exceptions\CanNotConvertObjectException;
 use Apie\TypeConverter\Utils\ConverterUtil;
 use Apie\TypeConverter\Utils\ReflectionTypeUtil;
@@ -58,7 +58,7 @@ final class TypeConverter {
                 $errors[(string) $current] = $throwable;
             }
         }
-        throw new CanNotConverObjectToUnionException($data, $errors, $wantedType);
+        throw new CanNotConvertObjectToUnionException($data, $errors, $wantedType);
     }
 
     public function convertTo(mixed $data, ReflectionType|string $wantedType): mixed
