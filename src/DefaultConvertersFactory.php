@@ -5,6 +5,7 @@ use Apie\TypeConverter\Converters\ArrayToObjectConverter;
 use Apie\TypeConverter\Converters\FloatToStringConverter;
 use Apie\TypeConverter\Converters\IntToStringConverter;
 use Apie\TypeConverter\Converters\ReflectionTypeToStringConverter;
+use Apie\TypeConverter\Converters\StringToFloatConverter;
 use Apie\TypeConverter\Converters\StringToIntConverter;
 use Apie\TypeConverter\Converters\StringToReflectionTypeConverter;
 
@@ -25,6 +26,7 @@ final class DefaultConvertersFactory {
             new FloatToStringConverter(),
             new IntToStringConverter(),
             new StringToIntConverter(),
+            new StringToFloatConverter(),
             new ReflectionTypeToStringConverter(),
             new StringToReflectionTypeConverter(),
             new ArrayToObjectConverter(),
