@@ -33,6 +33,25 @@ class TypeConverterTest extends TestCase
     /**
      * @test
      */
+    public function it_maps_mixed_to_every_type()
+    {
+        $testItem = new TypeConverter(
+            new ObjectToObjectConverter(),
+            new class implements ConverterInterface {
+                public function convert(mixed $input): string {
+                    return get_debug_type($input);
+                }
+            }
+        );
+        $this->assertSame(
+            'int',
+            $testItem->convertTo(12, 'string')
+        );
+    }
+
+    /**
+     * @test
+     */
     public function it_can_pick_the_right_converter_without_caching()
     {
         $testItem = new TypeConverter(

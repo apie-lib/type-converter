@@ -34,6 +34,7 @@ final class ReflectionTypeUtil
             if ($type->isBuiltin()) {
                 $name = $type->getName();
                 return match ($name) {
+                    'mixed' => true,
                     'false' => $input === false,
                     'true' => $input === true,
                     'object' => is_object($input),
