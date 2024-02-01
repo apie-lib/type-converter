@@ -4,12 +4,12 @@ namespace Apie\TypeConverter\Exceptions;
 use LogicException;
 use ReflectionUnionType;
 
-final class CanNotConvertObjectToUnionException extends LogicException
+final class CanNotConvertObjectToUnionException extends LogicException implements GetMultipleChainedExceptionInterface
 {
     /**
      * @param array<string, Throwable> $errors
      */
-    public function __construct(mixed $data, array $errors, ReflectionUnionType $wantedType)
+    public function __construct(mixed $data, private array $errors, ReflectionUnionType $wantedType)
     {
         $messages = [];
         $previous = null;
@@ -22,5 +22,10 @@ final class CanNotConvertObjectToUnionException extends LogicException
             0,
             $previous
         );
+    }
+
+    public function getChainedExceptions(): array
+    {
+        return $this->errors;
     }
 }
