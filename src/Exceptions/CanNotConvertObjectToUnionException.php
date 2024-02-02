@@ -3,6 +3,7 @@ namespace Apie\TypeConverter\Exceptions;
 
 use LogicException;
 use ReflectionUnionType;
+use Throwable;
 
 final class CanNotConvertObjectToUnionException extends LogicException implements GetMultipleChainedExceptionInterface
 {
