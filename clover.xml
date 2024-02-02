@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1706771104">
-  <project timestamp="1706771104">
+<coverage generated="1706882750">
+  <project timestamp="1706882750">
     <file name="/home/runner/work/type-converter/type-converter/src/ConverterInterface.php">
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -176,20 +176,20 @@
       <class name="Apie\TypeConverter\Exceptions\CanNotConvertObjectToUnionException" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="13" coveredelements="0"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="14" type="stmt" count="0"/>
+      <line num="13" type="method" name="__construct" visibility="public" complexity="2" crap="6" count="0"/>
       <line num="15" type="stmt" count="0"/>
       <line num="16" type="stmt" count="0"/>
       <line num="17" type="stmt" count="0"/>
       <line num="18" type="stmt" count="0"/>
-      <line num="20" type="stmt" count="0"/>
+      <line num="19" type="stmt" count="0"/>
       <line num="21" type="stmt" count="0"/>
       <line num="22" type="stmt" count="0"/>
       <line num="23" type="stmt" count="0"/>
       <line num="24" type="stmt" count="0"/>
-      <line num="27" type="method" name="getChainedExceptions" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <metrics loc="31" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="13" coveredelements="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="28" type="method" name="getChainedExceptions" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="30" type="stmt" count="0"/>
+      <metrics loc="32" ncloc="29" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="13" coveredelements="0"/>
     </file>
     <file name="/home/runner/work/type-converter/type-converter/src/Exceptions/GetMultipleChainedExceptionInterface.php">
       <metrics loc="12" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -457,6 +457,6 @@
       <line num="199" type="stmt" count="3"/>
       <metrics loc="201" ncloc="192" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="73" elements="116" coveredelements="75"/>
     </file>
-    <metrics files="20" loc="865" ncloc="787" classes="17" methods="33" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="312" coveredstatements="240" elements="345" coveredelements="261"/>
+    <metrics files="20" loc="866" ncloc="788" classes="17" methods="33" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="312" coveredstatements="240" elements="345" coveredelements="261"/>
   </project>
 </coverage>
