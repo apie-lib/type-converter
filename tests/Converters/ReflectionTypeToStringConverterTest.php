@@ -23,7 +23,7 @@ class ReflectionTypeToStringConverterTest extends TestCase
         );
     }
 
-    public function provideTypes(): Generator
+    public static function provideTypes(): Generator
     {
         yield ['string', ReflectionTypeFactory::createReflectionType('string')];
         yield ['(string|int)', ReflectionTypeFactory::createReflectionType('string|int')];
@@ -31,11 +31,9 @@ class ReflectionTypeToStringConverterTest extends TestCase
             '(IteratorAggregate&JsonSerializable)',
             ReflectionTypeFactory::createReflectionType('IteratorAggregate&JsonSerializable')
         ];
-        if (PHP_VERSION_ID >= 80200) {
-            yield [
-                '((IteratorAggregate&JsonSerializable)|float)',
-                ReflectionTypeFactory::createReflectionType('(IteratorAggregate&JsonSerializable)|float')
-            ];
-        }
+       yield [
+            '((IteratorAggregate&JsonSerializable)|float)',
+            ReflectionTypeFactory::createReflectionType('(IteratorAggregate&JsonSerializable)|float')
+        ];
     }
 }

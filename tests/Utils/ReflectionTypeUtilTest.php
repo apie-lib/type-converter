@@ -22,7 +22,7 @@ class ReflectionTypeUtilTest extends TestCase
         $this->assertEquals($expected ? new ReflectionClass($expected) : null, ReflectionTypeUtil::toClass($type));
     }
 
-    public function toClassProvider()
+    public static function toClassProvider()
     {
         yield [null, ReflectionTypeFactory::createReflectionType('string')];
         yield [stdClass::class, ReflectionTypeFactory::createReflectionType('stdClass')];
@@ -38,7 +38,7 @@ class ReflectionTypeUtilTest extends TestCase
         $this->assertEquals($expected, ReflectionTypeUtil::isApplicable($input, ReflectionTypeFactory::createReflectionType($type)));
     }
 
-    public function isApplicableProvider()
+    public static function isApplicableProvider()
     {
         $string = 'this is a string';
         $true = true;
@@ -61,17 +61,18 @@ class ReflectionTypeUtilTest extends TestCase
             yield [true, $true, 'true'];
             yield [false, $false, 'true'];
         }
-        yield [true, $this, 'object'];
-        yield [true, $this, '?object'];
+        $testCase = new self('test');
+        yield [true, $testCase, 'object'];
+        yield [true, $testCase, '?object'];
 
         yield [false, $string, 'object'];
         yield [false, $true, 'object'];
         yield [false, null, 'object'];
         yield [true, new stdClass, 'object'];
-        yield [true, $this, 'object'];
-        yield [true, $this, __CLASS__];
-        yield [true, $this, TestCase::class];
-        yield [true, $this, Reorderable::class . '&' .  SelfDescribing::class];
+        yield [true, $testCase, 'object'];
+        yield [true, $testCase, __CLASS__];
+        yield [true, $testCase, TestCase::class];
+        yield [true, $testCase, Reorderable::class . '&' .  SelfDescribing::class];
 
     }
 
@@ -86,7 +87,7 @@ class ReflectionTypeUtilTest extends TestCase
         ));
     }
 
-    public function rateAccuracyProvider()
+    public static function rateAccuracyProvider()
     {
         yield [1000, 'string', 'string'];
         yield [900, 'string', '?string'];

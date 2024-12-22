@@ -21,7 +21,7 @@ class ReflectionTypeFactoryTest extends TestCase
         $this->assertInstanceof($expectedType, ReflectionTypeFactory::createReflectionType($input));
     }
 
-    public function createProvider(): Generator
+    public static function createProvider(): Generator
     {
 
         yield [ReflectionNamedType::class, 'string'];
@@ -42,15 +42,5 @@ class ReflectionTypeFactoryTest extends TestCase
     {
         $this->expectException(RuntimeException::class);
         ReflectionTypeFactory::createReflectionType('true; private $exploit = true;');
-    }
-
-    /**
-     * @test
-     * @requires PHP < 8.2
-     */
-    public function true_typehint_throws_error_when_php_lower_than_php82()
-    {
-        $this->expectException(LogicException::class);
-        ReflectionTypeFactory::createReflectionType('true');
     }
 }
