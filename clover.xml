@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1735105473">
-  <project timestamp="1735105473">
+<coverage generated="1736090563">
+  <project timestamp="1736090563">
     <file name="/home/runner/work/type-converter/type-converter/src/ConverterInterface.php">
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -161,39 +161,19 @@
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/ReflectionTypeFactory.php">
         <class name="Apie\TypeConverter\ReflectionTypeFactory" namespace="Apie\TypeConverter">
-          <metrics complexity="12" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="25" elements="30" coveredelements="28"/>
+          <metrics complexity="4" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="10" coveredelements="10"/>
         </class>
-        <line num="28" type="method" name="createNullType" visibility="private" complexity="1" crap="1" count="1"/>
-        <line num="30" type="stmt" count="1"/>
-        <line num="31" type="stmt" count="1"/>
-        <line num="34" type="method" name="createFalseType" visibility="private" complexity="1" crap="1" count="1"/>
-        <line num="36" type="stmt" count="1"/>
-        <line num="37" type="stmt" count="1"/>
-        <line num="40" type="method" name="createTrueType" visibility="private" complexity="2" crap="2.01" count="1"/>
-        <line num="42" type="stmt" count="1"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="45" type="stmt" count="1"/>
-        <line num="46" type="stmt" count="1"/>
-        <line num="47" type="stmt" count="1"/>
-        <line num="48" type="stmt" count="1"/>
-        <line num="49" type="stmt" count="1"/>
-        <line num="52" type="method" name="createReflectionType" visibility="public" complexity="7" crap="7" count="60"/>
-        <line num="54" type="stmt" count="60"/>
-        <line num="55" type="stmt" count="1"/>
-        <line num="57" type="stmt" count="59"/>
-        <line num="58" type="stmt" count="17"/>
-        <line num="59" type="stmt" count="1"/>
-        <line num="60" type="stmt" count="16"/>
-        <line num="61" type="stmt" count="1"/>
-        <line num="62" type="stmt" count="15"/>
-        <line num="63" type="stmt" count="1"/>
-        <line num="65" type="stmt" count="14"/>
-        <line num="66" type="stmt" count="14"/>
-        <line num="67" type="stmt" count="14"/>
-        <line num="68" type="stmt" count="14"/>
-        <line num="69" type="stmt" count="14"/>
-        <line num="72" type="stmt" count="59"/>
-        <metrics loc="75" ncloc="66" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="25" elements="30" coveredelements="28"/>
+        <line num="20" type="method" name="createReflectionType" visibility="public" complexity="4" crap="4" count="60"/>
+        <line num="22" type="stmt" count="60"/>
+        <line num="23" type="stmt" count="1"/>
+        <line num="25" type="stmt" count="59"/>
+        <line num="26" type="stmt" count="17"/>
+        <line num="27" type="stmt" count="17"/>
+        <line num="28" type="stmt" count="17"/>
+        <line num="29" type="stmt" count="17"/>
+        <line num="30" type="stmt" count="17"/>
+        <line num="32" type="stmt" count="59"/>
+        <metrics loc="35" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="10" coveredelements="10"/>
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/TypeConverter.php">
         <class name="Apie\TypeConverter\TypeConverter" namespace="Apie\TypeConverter">
@@ -313,34 +293,42 @@
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/Utils/PropertyIterateUtil.php">
         <class name="Apie\TypeConverter\Utils\PropertyIterateUtil" namespace="Apie\TypeConverter\Utils">
-          <metrics complexity="16" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="25" coveredelements="19"/>
+          <metrics complexity="21" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="22" elements="33" coveredelements="22"/>
         </class>
-        <line num="20" type="method" name="getReadProperties" visibility="public" complexity="7" crap="7.04" count="3"/>
+        <line num="20" type="method" name="getReadProperties" visibility="public" complexity="10" crap="13.05" count="3"/>
         <line num="22" type="stmt" count="3"/>
         <line num="23" type="stmt" count="3"/>
         <line num="24" type="stmt" count="3"/>
-        <line num="26" type="stmt" count="3"/>
-        <line num="27" type="stmt" count="1"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="1"/>
-        <line num="31" type="stmt" count="1"/>
-        <line num="33" type="stmt" count="1"/>
-        <line num="34" type="stmt" count="1"/>
-        <line num="38" type="stmt" count="3"/>
-        <line num="44" type="method" name="getWriteProperties" visibility="public" complexity="8" crap="9.00" count="2"/>
-        <line num="46" type="stmt" count="2"/>
-        <line num="47" type="stmt" count="2"/>
-        <line num="48" type="stmt" count="2"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="51" type="stmt" count="2"/>
-        <line num="53" type="stmt" count="2"/>
-        <line num="54" type="stmt" count="1"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="1"/>
-        <line num="58" type="stmt" count="1"/>
-        <line num="59" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="3"/>
+        <line num="34" type="stmt" count="3"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="39" type="stmt" count="1"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="46" type="stmt" count="3"/>
+        <line num="52" type="method" name="getWriteProperties" visibility="public" complexity="10" crap="11.90" count="2"/>
+        <line num="54" type="stmt" count="2"/>
+        <line num="55" type="stmt" count="2"/>
+        <line num="56" type="stmt" count="2"/>
+        <line num="57" type="stmt" count="0"/>
+        <line num="59" type="stmt" count="2"/>
+        <line num="60" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="0"/>
         <line num="63" type="stmt" count="2"/>
-        <metrics loc="65" ncloc="56" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="19" elements="25" coveredelements="19"/>
+        <line num="65" type="stmt" count="2"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="0"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="0"/>
+        <line num="75" type="stmt" count="2"/>
+        <metrics loc="77" ncloc="68" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="22" elements="33" coveredelements="22"/>
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/Utils/ReflectionTypeUtil.php">
         <class name="Apie\TypeConverter\Utils\ReflectionTypeUtil" namespace="Apie\TypeConverter\Utils">
@@ -465,6 +453,6 @@
         <metrics loc="201" ncloc="192" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="73" elements="116" coveredelements="75"/>
       </file>
     </package>
-    <metrics files="20" loc="866" ncloc="788" classes="17" methods="33" coveredmethods="21" conditionals="0" coveredconditionals="0" statements="312" coveredstatements="244" elements="345" coveredelements="265"/>
+    <metrics files="20" loc="838" ncloc="763" classes="17" methods="30" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="303" coveredstatements="231" elements="333" coveredelements="250"/>
   </project>
 </coverage>
