@@ -21,7 +21,15 @@ final class PropertyIterateUtil {
     {
         $result = [];
         foreach ($class->getProperties(ReflectionProperty::IS_PUBLIC) as $property) {
-            $result[$property->name] = $property->getType() ?? ReflectionTypeFactory::createReflectionType('mixed');
+            if (PHP_VERSION_ID >= 80400 && $property->isVirtual()) {
+                $method = $property->getHook(\PropertyHookType::Get);
+                if ($method === null) {
+                    continue;
+                }
+                $result[$property->name] = $method->getReturnType() ?? ReflectionTypeFactory::createReflectionType('mixed');
+            } else {
+                $result[$property->name] = $property->getType() ?? ReflectionTypeFactory::createReflectionType('mixed');
+            }
         }
         foreach ($class->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
             if ($method->isStatic()) {
@@ -48,7 +56,11 @@ final class PropertyIterateUtil {
             if ($property->isReadOnly()) {
                 continue;
             }
-            $result[$property->name] = $property->getType() ?? ReflectionTypeFactory::createReflectionType('mixed');
+            $type = PHP_VERSION_ID >= 80400 ? $property->getSettableType() : $property->getType();
+            if ((string) $type === 'never') {
+                continue;
+            }
+            $result[$property->name] = $type ?? ReflectionTypeFactory::createReflectionType('mixed');
         }
         foreach ($class->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
             if ($method->isStatic()) {
