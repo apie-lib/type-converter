@@ -27,6 +27,8 @@ final class DefaultConvertersFactory {
             new IntToStringConverter(),
             new StringToIntConverter(),
             new StringToFloatConverter(),
+            new EnumToStringConverter(),
+            new StringToEnumConverter(),
             new ReflectionTypeToStringConverter(),
             new StringToReflectionTypeConverter(),
             new ArrayToObjectConverter(),
