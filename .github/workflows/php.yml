@@ -18,7 +18,7 @@ jobs:
         php-version: '8.4'
         coverage: pcov
         ini-values: pcov.directory=src
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Validate composer.json
       run: composer validate
@@ -36,12 +36,12 @@ jobs:
         push_badge: true
         repo_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: Code coverage (HTML)
         path: coverage
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: Code coverage (Clover xml)
         path: clover.xml
