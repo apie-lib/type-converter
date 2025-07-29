@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736090563">
-  <project timestamp="1736090563">
+<coverage generated="1753799307">
+  <project timestamp="1753799307" name="Clover Coverage">
     <file name="/home/runner/work/type-converter/type-converter/src/ConverterInterface.php">
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -45,6 +45,14 @@
         <line num="77" type="stmt" count="0"/>
         <line num="81" type="stmt" count="2"/>
         <metrics loc="83" ncloc="80" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="22" elements="35" coveredelements="23"/>
+      </file>
+      <file name="/home/runner/work/type-converter/type-converter/src/Converters/EnumToStringConverter.php">
+        <class name="Apie\TypeConverter\Converters\EnumToStringConverter" namespace="Apie\TypeConverter\Converters">
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        </class>
+        <line num="11" type="method" name="convert" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <metrics loc="15" ncloc="15" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/Converters/FloatToStringConverter.php">
         <class name="Apie\TypeConverter\Converters\FloatToStringConverter" namespace="Apie\TypeConverter\Converters">
@@ -100,6 +108,24 @@
         <line num="33" type="stmt" count="6"/>
         <metrics loc="35" ncloc="32" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="17" coveredelements="17"/>
       </file>
+      <file name="/home/runner/work/type-converter/type-converter/src/Converters/StringToEnumConverter.php">
+        <class name="Apie\TypeConverter\Converters\StringToEnumConverter" namespace="Apie\TypeConverter\Converters">
+          <metrics complexity="5" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="12" coveredelements="0"/>
+        </class>
+        <line num="15" type="method" name="convert" visibility="public" complexity="5" crap="30" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <metrics loc="34" ncloc="34" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="12" coveredelements="0"/>
+      </file>
       <file name="/home/runner/work/type-converter/type-converter/src/Converters/StringToFloatConverter.php">
         <class name="Apie\TypeConverter\Converters\StringToFloatConverter" namespace="Apie\TypeConverter\Converters">
           <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="10" coveredelements="10"/>
@@ -144,11 +170,9 @@
     <package name="Apie\TypeConverter">
       <file name="/home/runner/work/type-converter/type-converter/src/DefaultConvertersFactory.php">
         <class name="Apie\TypeConverter\DefaultConvertersFactory" namespace="Apie\TypeConverter">
-          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
+          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="13" coveredelements="13"/>
         </class>
-        <line num="23" type="method" name="create" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="25" type="stmt" count="4"/>
-        <line num="26" type="stmt" count="4"/>
+        <line num="25" type="method" name="create" visibility="public" complexity="1" crap="1" count="4"/>
         <line num="27" type="stmt" count="4"/>
         <line num="28" type="stmt" count="4"/>
         <line num="29" type="stmt" count="4"/>
@@ -157,7 +181,11 @@
         <line num="32" type="stmt" count="4"/>
         <line num="33" type="stmt" count="4"/>
         <line num="34" type="stmt" count="4"/>
-        <metrics loc="36" ncloc="30" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="11" coveredelements="11"/>
+        <line num="35" type="stmt" count="4"/>
+        <line num="36" type="stmt" count="4"/>
+        <line num="37" type="stmt" count="4"/>
+        <line num="38" type="stmt" count="4"/>
+        <metrics loc="40" ncloc="34" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="13" coveredelements="13"/>
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/ReflectionTypeFactory.php">
         <class name="Apie\TypeConverter\ReflectionTypeFactory" namespace="Apie\TypeConverter">
@@ -453,6 +481,6 @@
         <metrics loc="201" ncloc="192" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="73" elements="116" coveredelements="75"/>
       </file>
     </package>
-    <metrics files="20" loc="838" ncloc="763" classes="17" methods="30" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="303" coveredstatements="231" elements="333" coveredelements="250"/>
+    <metrics files="22" loc="891" ncloc="816" classes="19" methods="32" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="317" coveredstatements="233" elements="349" coveredelements="252"/>
   </project>
 </coverage>
