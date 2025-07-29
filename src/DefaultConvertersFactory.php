@@ -2,9 +2,11 @@
 namespace Apie\TypeConverter;
 
 use Apie\TypeConverter\Converters\ArrayToObjectConverter;
+use Apie\TypeConverter\Converters\EnumToStringConverter;
 use Apie\TypeConverter\Converters\FloatToStringConverter;
 use Apie\TypeConverter\Converters\IntToStringConverter;
 use Apie\TypeConverter\Converters\ReflectionTypeToStringConverter;
+use Apie\TypeConverter\Converters\StringToEnumConverter;
 use Apie\TypeConverter\Converters\StringToFloatConverter;
 use Apie\TypeConverter\Converters\StringToIntConverter;
 use Apie\TypeConverter\Converters\StringToReflectionTypeConverter;
