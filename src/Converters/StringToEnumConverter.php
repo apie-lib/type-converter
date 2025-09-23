@@ -9,6 +9,7 @@ use Apie\TypeConverter\TypeConverter;
 use Apie\TypeConverter\Utils\ConverterUtil;
 use Apie\TypeConverter\Utils\PropertyIterateUtil;
 use Apie\TypeConverter\Utils\ReflectionTypeUtil;
+use BackedEnum;
 
 class StringToEnumConverter implements ConverterInterface
 {
@@ -17,11 +18,14 @@ class StringToEnumConverter implements ConverterInterface
         $class = ReflectionTypeUtil::toClass($wantedType);
         assert ($class !== null);
         $className = $class->name;
-        if ($result = $className::tryFrom($input)) {
+        if (is_subclass_of($className, BackedEnum::class) && $result = $className::tryFrom($input)) {
             return $result;
         }
         foreach ($className::cases() as $case) {
-            if ($input === $case->name || $input === (string) $case->value) {
+            if (
+                $input === $case->name
+                || ($case instanceof BackendEnum && $input === (string) $case->value)
+            ) {
                 return $case;
             }
         }
