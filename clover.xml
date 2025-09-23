@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1753799307">
-  <project timestamp="1753799307" name="Clover Coverage">
+<coverage generated="1758601915">
+  <project timestamp="1758601915" name="Clover Coverage">
     <file name="/home/runner/work/type-converter/type-converter/src/ConverterInterface.php">
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -110,21 +110,22 @@
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/Converters/StringToEnumConverter.php">
         <class name="Apie\TypeConverter\Converters\StringToEnumConverter" namespace="Apie\TypeConverter\Converters">
-          <metrics complexity="5" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="12" coveredelements="0"/>
+          <metrics complexity="7" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="13" coveredelements="0"/>
         </class>
-        <line num="15" type="method" name="convert" visibility="public" complexity="5" crap="30" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="19" type="stmt" count="0"/>
+        <line num="16" type="method" name="convert" visibility="public" complexity="7" crap="56" count="0"/>
+        <line num="18" type="stmt" count="0"/>
         <line num="20" type="stmt" count="0"/>
         <line num="21" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
         <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
         <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <metrics loc="34" ncloc="34" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="12" coveredelements="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <metrics loc="38" ncloc="38" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="13" coveredelements="0"/>
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/Converters/StringToFloatConverter.php">
         <class name="Apie\TypeConverter\Converters\StringToFloatConverter" namespace="Apie\TypeConverter\Converters">
@@ -481,6 +482,6 @@
         <metrics loc="201" ncloc="192" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="73" elements="116" coveredelements="75"/>
       </file>
     </package>
-    <metrics files="22" loc="891" ncloc="816" classes="19" methods="32" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="317" coveredstatements="233" elements="349" coveredelements="252"/>
+    <metrics files="22" loc="895" ncloc="820" classes="19" methods="32" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="318" coveredstatements="233" elements="350" coveredelements="252"/>
   </project>
 </coverage>
