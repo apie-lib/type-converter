@@ -47,9 +47,21 @@ final class TypeConverter {
 
     private function convertToUnion(mixed $data, ReflectionUnionType $wantedType): mixed
     {
-        $todo = $wantedType->getTypes();
+        $types = $wantedType->getTypes();
+        // TODO: sort on priority (do float and int check before string). Null check should be last
+        $todo = [];
+        $nullType = null;
+        foreach ($types as $type) {
+            if ((string)$type === 'null') {
+                $nullType = $type;
+            } else {
+                $todo[] = $type;
+            }
+        }
+        if ($nullType) {
+            array_unshift($todo, $nullType);
+        }
         $errors = [];
-        // TODO: sort on priority (do float and int check before string)
         while (!empty($todo)) {
             $current = array_pop($todo);
             try {
