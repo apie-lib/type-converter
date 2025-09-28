@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1758601915">
-  <project timestamp="1758601915" name="Clover Coverage">
+<coverage generated="1759095216">
+  <project timestamp="1759095216" name="Clover Coverage">
     <file name="/home/runner/work/type-converter/type-converter/src/ConverterInterface.php">
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -206,7 +206,7 @@
       </file>
       <file name="/home/runner/work/type-converter/type-converter/src/TypeConverter.php">
         <class name="Apie\TypeConverter\TypeConverter" namespace="Apie\TypeConverter">
-          <metrics complexity="21" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="45" elements="52" coveredelements="48"/>
+          <metrics complexity="24" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="51" elements="60" coveredelements="54"/>
         </class>
         <line num="17" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="12"/>
         <line num="19" type="stmt" count="12"/>
@@ -226,41 +226,49 @@
         <line num="40" type="stmt" count="9"/>
         <line num="41" type="stmt" count="6"/>
         <line num="45" type="stmt" count="9"/>
-        <line num="48" type="method" name="convertToUnion" visibility="private" complexity="3" crap="3.47" count="1"/>
+        <line num="48" type="method" name="convertToUnion" visibility="private" complexity="6" crap="7.10" count="1"/>
         <line num="50" type="stmt" count="1"/>
-        <line num="51" type="stmt" count="1"/>
+        <line num="52" type="stmt" count="1"/>
         <line num="53" type="stmt" count="1"/>
         <line num="54" type="stmt" count="1"/>
-        <line num="56" type="stmt" count="1"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="64" type="method" name="convertTo" visibility="public" complexity="11" crap="11" count="12"/>
-        <line num="66" type="stmt" count="12"/>
-        <line num="67" type="stmt" count="8"/>
-        <line num="69" type="stmt" count="12"/>
-        <line num="70" type="stmt" count="12"/>
-        <line num="71" type="stmt" count="12"/>
-        <line num="72" type="stmt" count="12"/>
-        <line num="73" type="stmt" count="3"/>
-        <line num="75" type="stmt" count="10"/>
-        <line num="76" type="stmt" count="1"/>
-        <line num="78" type="stmt" count="9"/>
-        <line num="79" type="stmt" count="9"/>
-        <line num="80" type="stmt" count="9"/>
-        <line num="81" type="stmt" count="6"/>
-        <line num="82" type="stmt" count="6"/>
-        <line num="83" type="stmt" count="5"/>
-        <line num="84" type="stmt" count="5"/>
-        <line num="85" type="stmt" count="5"/>
-        <line num="89" type="stmt" count="9"/>
-        <line num="90" type="stmt" count="5"/>
-        <line num="92" type="stmt" count="4"/>
-        <line num="94" type="stmt" count="3"/>
-        <line num="95" type="stmt" count="2"/>
-        <line num="96" type="stmt" count="2"/>
-        <line num="99" type="stmt" count="1"/>
-        <metrics loc="101" ncloc="97" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="48" coveredstatements="45" elements="52" coveredelements="48"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="65" type="stmt" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <line num="69" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="73" type="stmt" count="0"/>
+        <line num="76" type="method" name="convertTo" visibility="public" complexity="11" crap="11" count="12"/>
+        <line num="78" type="stmt" count="12"/>
+        <line num="79" type="stmt" count="8"/>
+        <line num="81" type="stmt" count="12"/>
+        <line num="82" type="stmt" count="12"/>
+        <line num="83" type="stmt" count="12"/>
+        <line num="84" type="stmt" count="12"/>
+        <line num="85" type="stmt" count="3"/>
+        <line num="87" type="stmt" count="10"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="9"/>
+        <line num="91" type="stmt" count="9"/>
+        <line num="92" type="stmt" count="9"/>
+        <line num="93" type="stmt" count="6"/>
+        <line num="94" type="stmt" count="6"/>
+        <line num="95" type="stmt" count="5"/>
+        <line num="96" type="stmt" count="5"/>
+        <line num="97" type="stmt" count="5"/>
+        <line num="101" type="stmt" count="9"/>
+        <line num="102" type="stmt" count="5"/>
+        <line num="104" type="stmt" count="4"/>
+        <line num="106" type="stmt" count="3"/>
+        <line num="107" type="stmt" count="2"/>
+        <line num="108" type="stmt" count="2"/>
+        <line num="111" type="stmt" count="1"/>
+        <metrics loc="113" ncloc="109" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="56" coveredstatements="51" elements="60" coveredelements="54"/>
       </file>
     </package>
     <package name="Apie\TypeConverter\Exceptions">
@@ -482,6 +490,6 @@
         <metrics loc="201" ncloc="192" classes="1" methods="6" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="73" elements="116" coveredelements="75"/>
       </file>
     </package>
-    <metrics files="22" loc="895" ncloc="820" classes="19" methods="32" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="318" coveredstatements="233" elements="350" coveredelements="252"/>
+    <metrics files="22" loc="907" ncloc="832" classes="19" methods="32" coveredmethods="19" conditionals="0" coveredconditionals="0" statements="326" coveredstatements="239" elements="358" coveredelements="258"/>
   </project>
 </coverage>
